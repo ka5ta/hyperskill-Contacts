@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public enum Gender {
-    FEMALE("F"), MALE("M"), UNDEFINED("U");
+    F("F"), M("M"), UNDEFINED("U");
 
     private String label;
 

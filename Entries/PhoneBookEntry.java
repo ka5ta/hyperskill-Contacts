@@ -1,11 +1,12 @@
 package contacts.Entries;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class PhoneBookEntry {
+public abstract class PhoneBookEntry implements Serializable {
     private String name;
     private String phone = "[no number]";
 

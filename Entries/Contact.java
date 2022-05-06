@@ -2,19 +2,21 @@ package contacts.Entries;
 
 import contacts.Constants.Gender;
 
-import java.awt.geom.Area;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.UUID;
+
+import static java.util.UUID.randomUUID;
 
 public class Contact extends PhoneBookEntry {
 
+    private final UUID UUID;
     private String surname;
     private Gender gender;
     private LocalDate birthday;
 
     public Contact() {
+        UUID = randomUUID();
     }
 
     public void setSurname(String surname) {
@@ -33,6 +35,10 @@ public class Contact extends PhoneBookEntry {
         return super.getName() + " " + this.surname;
     }
 
+    public java.util.UUID getUUID() {
+        return UUID;
+    }
+
     @Override
     public String toString() {
         String genderString;
@@ -49,10 +55,8 @@ public class Contact extends PhoneBookEntry {
             birth = birthday.toString();
         }
 
-
-
-        StringBuilder builder = new StringBuilder();
-        builder.append("Name: ").append(super.getName()).append("\n")
+        StringBuilder builder;
+        builder = new StringBuilder().append("Name: ").append(super.getName()).append("\n")
                 .append("Surname: ").append(surname).append("\n")
                 .append("Birth date: ").append(birth).append("\n")
                 .append("Gender: ").append(genderString).append("\n")

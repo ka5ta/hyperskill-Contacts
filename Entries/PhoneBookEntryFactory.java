@@ -33,9 +33,7 @@ public abstract class PhoneBookEntryFactory {
         }
     }
 
-    public static void requestChangeEntry(Scanner scanner, PhoneBookRepo phoneBookRepo) {
-
-        PhoneBookEntry entry = phoneBookRepo.selectEntry(scanner);
+    public static void requestChangeEntry(Scanner scanner, PhoneBookEntry entry) {
 
         if(Objects.nonNull(entry)){
             EntryConfigurator configurator = EntryConfiguratorFactory.createConfigurator(entry, scanner);
